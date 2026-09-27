@@ -1,0 +1,154 @@
+/* ============================================================
+   產成文物｜設計代幣與基礎元件樣式
+   使用方式：整段複製進 HTML 的 <style>，再依當次需求微調。
+   語意色是慣例，不可換用途：
+   --now  琥珀 = 現況（既有的做法、舊系統）
+   --sys  藍   = 目標／我們的系統／建議方案
+   --gap  紅   = 落差、風險、斷點（只能用在這裡）
+   --ok   綠   = 已完成、已驗證、可直接沿用
+   --brain 紫  = 只存在人腦／對話裡、沒有系統承接的東西
+   ============================================================ */
+:root{
+  --paper:#F3F4F6; --ink:#1C1F26; --muted:#5F6673; --line:#D5D9E0; --panel:#FFFFFF;
+  --now:#B7791F;  --now-soft:#FBF3E4;
+  --sys:#1F5FBF;  --sys-soft:#E7EFFB;
+  --gap:#C8102E;  --gap-soft:#FBE9EC;
+  --ok:#2E7D5B;   --ok-soft:#E4F2EC;
+  --brain:#7A5AF5;--brain-soft:#EEEAFD;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  font-size:16px;line-height:1.75}
+a{color:var(--sys)}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .5em}
+h1{font-size:2.1rem;font-weight:900;letter-spacing:-.01em}
+h2{font-size:1.5rem;font-weight:700;padding-top:.3em}
+h3{font-size:1.12rem;font-weight:700}
+h4{font-size:1rem;font-weight:700;margin-bottom:.3em}
+p{margin:0 0 1em}
+ul,ol{margin:0 0 1em;padding-left:1.4em}
+li{margin:.25em 0}
+code{font-family:inherit;background:#E9EBEF;padding:.05em .4em;border-radius:4px;font-size:.95em}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.note{font-size:.9rem;color:var(--muted)}
+
+/* 置頂章節導覽 */
+nav{position:sticky;top:0;z-index:20;background:rgba(243,244,246,.92);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:6px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+nav a{text-decoration:none;color:var(--ink);font-size:.9rem;padding:6px 12px;
+  border-radius:999px;border:1px solid transparent}
+nav a:hover,nav a:focus-visible{border-color:var(--line);background:#fff;outline:none}
+
+/* 頁首：kicker（資料來源）＋大標＋一句話結論＋數據帶 */
+header{padding:56px 0 36px;border-bottom:1px solid var(--line)}
+header .kicker{color:var(--muted);margin-bottom:.6em}
+header .lead{font-size:1.12rem;max-width:760px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);margin-top:28px}
+.stats div{background:var(--panel);padding:14px 16px}
+.stats b{display:block;font-size:1.7rem;font-weight:900;line-height:1.1}
+.stats span{color:var(--muted);font-size:.9rem}
+
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+
+/* 圖例：頁面有對比色時必放 */
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.9rem;color:var(--muted);margin:0 0 18px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+/* 重點框：左邊色條＝語意 */
+.callout{padding:16px 20px;border-left:4px solid var(--sys);background:var(--sys-soft);margin:18px 0}
+.callout.now{border-color:var(--now);background:var(--now-soft)}
+.callout.gap{border-color:var(--gap);background:var(--gap-soft)}
+.callout.ok{border-color:var(--ok);background:var(--ok-soft)}
+.callout p:last-child{margin-bottom:0}
+
+/* 左右並排（資料庫卡、對照卡） */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+.db{background:var(--panel);border:1px solid var(--line);padding:18px 20px}
+.db h3{display:flex;align-items:baseline;gap:10px}
+.db h3 small{color:var(--muted);font-weight:400;font-size:.85rem}
+.db table{font-size:.9rem}
+
+/* 語意標籤 */
+.tag{display:inline-block;font-size:.78rem;padding:1px 8px;border-radius:4px;font-weight:500;white-space:nowrap}
+.tag.now{background:var(--now-soft);color:var(--now)}
+.tag.sys{background:var(--sys-soft);color:var(--sys)}
+.tag.gap{background:var(--gap-soft);color:var(--gap)}
+.tag.ok{background:var(--ok-soft);color:var(--ok)}
+.tag.brain{background:var(--brain-soft);color:var(--brain)}
+
+/* 表格 */
+table{border-collapse:collapse;width:100%;margin:0 0 1.2em;background:var(--panel)}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top;font-size:.93rem}
+th{background:#EBEDF1;font-weight:700}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tblwrap{overflow-x:auto}
+
+/* 流程圖容器：SVG 放裡面，窄螢幕橫向捲 */
+.flow{background:var(--panel);border:1px solid var(--line);padding:14px;margin:10px 0 20px;overflow-x:auto}
+.flow svg{display:block;min-width:820px;width:100%;height:auto}
+.flow .cap{font-size:.88rem;color:var(--muted);margin:8px 4px 0}
+
+/* 步驟卡：圓形序號＋動作＋完成訊號 */
+.steps{counter-reset:step;list-style:none;padding:0;margin:0}
+.steps>li{position:relative;padding:18px 20px 18px 74px;background:var(--panel);
+  border:1px solid var(--line);margin-bottom:12px}
+.steps>li::before{counter-increment:step;content:counter(step);position:absolute;left:20px;top:18px;
+  width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;font-weight:900;
+  display:flex;align-items:center;justify-content:center;font-size:1.05rem}
+.steps>li.zero::before{content:"0";background:var(--muted)}
+.steps h3{margin-bottom:.35em}
+.steps .meta{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:.93rem;margin-top:8px}
+.steps .meta dt{color:var(--muted);white-space:nowrap}
+.steps .meta dd{margin:0}
+.steps .meta ul{margin:0}
+
+/* 可複製區塊（提示詞、指令） */
+.prompt{background:#1C1F26;color:#E8EAEF;padding:22px 24px;border-radius:6px;position:relative;
+  font-size:.9rem;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+.copybtn{position:sticky;top:64px;float:right;margin:-6px -6px 0 0;background:#fff;
+  border:1px solid var(--line);color:var(--ink);padding:6px 14px;border-radius:6px;cursor:pointer;
+  font:inherit;font-size:.88rem}
+.copybtn:hover{background:#EBEDF1}
+.copybtn:focus-visible{outline:2px solid var(--sys)}
+
+/* 作答區（要他拍板時；骨架見 components.md 第 10 節） */
+.q{background:var(--panel);border:1px solid var(--line);padding:20px 22px;margin-bottom:14px}
+.q.done{border-color:var(--ok)}
+.q h3{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.q h3 .k{display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;
+  align-items:center;justify-content:center;font-weight:900;flex:none}
+.q.done h3 .k{background:var(--ok)}
+.q .why{font-size:.93rem;color:var(--muted);margin-bottom:12px}
+.q details{margin:0 0 12px;border:1px solid var(--line);background:#FAFBFC;padding:8px 12px;font-size:.93rem}
+.q details summary{cursor:pointer;font-weight:700}
+.opts{display:grid;gap:8px;margin-bottom:10px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);cursor:pointer;background:#FAFBFC}
+.opt:hover{border-color:var(--sys)}
+.opt input{margin-top:6px;flex:none;accent-color:var(--sys)}
+.opt:has(input:checked){border-color:var(--sys);background:var(--sys-soft)}
+.opt:has(input:focus-visible){outline:2px solid var(--sys)}
+.opt .rec{margin-left:6px}
+.q textarea{width:100%;min-height:44px;font:inherit;font-size:.93rem;padding:8px 10px;border:1px solid var(--line);
+  background:#fff;color:var(--ink);resize:vertical}
+.grp{font-size:.95rem;font-weight:700;color:var(--muted);letter-spacing:.06em;margin:26px 0 10px}
+.tray{position:sticky;bottom:0;background:#1C1F26;color:#E8EAEF;padding:16px 20px;margin-top:22px}
+.tray .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.tray .cnt{font-weight:700;margin-right:auto}
+.btn{font:inherit;font-size:.92rem;padding:8px 16px;border-radius:6px;border:1px solid #fff;background:#fff;color:#1C1F26;
+  cursor:pointer;font-weight:700}
+.btn.ghost{background:transparent;color:#fff;border-color:#8A94A6;font-weight:500}
+.tray textarea{width:100%;min-height:120px;background:#0F1116;color:#E8EAEF;border:1px solid #3A4050;
+  font:inherit;font-size:.88rem;line-height:1.6;padding:10px 12px;resize:vertical}
+
+footer{padding:28px 0 60px;color:var(--muted);font-size:.88rem}
+
+/* 作答區：清單與三段後果 */
+.qlist{margin:6px 0 0;padding-left:1.2em;font-size:.9rem;columns:2;column-gap:24px}.qlist li{break-inside:avoid}
+.opt .steps{display:grid;gap:2px;margin-top:4px;font-size:.82rem;color:var(--muted);font-weight:400}
+@media(max-width:640px){.qlist{columns:1}}
