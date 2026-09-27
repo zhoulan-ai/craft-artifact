@@ -56,9 +56,11 @@ Claude 會先判斷這次是診斷、企劃、系統說明還是紀錄，選對�
 
 ## 作者
 
-周浪 Lan，[STRONG FLOW 純浪力量](https://strongflow.tw)共同創辦人。我們在台南經營兩間重量訓練與器械皮拉提斯工作室，這份 Skill 是我們把工作室營運交給 AI 協作之後，每天實際在用的其中一份。
+周浪 Lan，協助工作室把營運導入 AI 協作。我自己是 [STRONG FLOW 純浪力量](https://strongflow.tw)共同創辦人，在台南經營兩間重量訓練與器械皮拉提斯工作室；這份 Skill 是我們把工作室營運交給 AI 協作之後，每天實際在用的其中一份。
 
-官網：[https://strongflow.tw](https://strongflow.tw)
+- 更多 Skill：[github.com/zhoulan-ai](https://github.com/zhoulan-ai)
+- 想讓你的工作室也這樣運作：[ji3g4106@gmail.com](mailto:ji3g4106@gmail.com)
+- 官網：[https://strongflow.tw](https://strongflow.tw)
 
 ## 授權
 
