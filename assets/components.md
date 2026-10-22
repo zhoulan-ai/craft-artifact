@@ -183,6 +183,8 @@ function copyPrompt(){
 
 離線環境拿掉這行也要能讀（font-family 已含系統中文字體備援）。
 
+**深色模式（選用）**：頁面的顏色全部走 token、沒有寫死的淺色時，在 tokens.css 後面接 `assets/tokens-dark.css`，就同時支援系統深色與檢視器的深色切換。表頭、程式碼底色這類 tokens.css 寫死的淺灰，頁面裡改成 token 再覆寫（例如自訂 `--th`、`--codebg` 兩個 token）。
+
 ## 10. 作答區（要他拍板時）
 
 什麼時候用：這份文物的目的是讓他（決策人）做決定。規矩見 SKILL.md「要他拍板的文物」一節。樣式在 `tokens.css` 尾段（`.q`、`.opt`、`.tray`）。

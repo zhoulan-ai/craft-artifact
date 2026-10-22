@@ -18,7 +18,7 @@
 **claude.ai**
 1. 下載 [craft-artifact.zip](https://github.com/zhoulan-ai/craft-artifact/raw/main/craft-artifact.zip)（不用解壓縮）。
 2. 設定 → Capabilities → Skills → 上傳 skill，選這個 zip。
-3. 在新對話裡說「產成文物 skill 的版本標記是什麼？」，回答「v3.2 公開版」就代表裝好了。
+3. 在新對話裡說「產成文物 skill 的版本標記是什麼？」，回答「v3.8 公開版」就代表裝好了。
 
 **Claude Code**
 在終端機執行（所有專案都能用）：
@@ -35,6 +35,8 @@ git clone https://github.com/zhoulan-ai/craft-artifact.git ~/.claude/skills/craf
 
 Claude 會先判斷這次是診斷、企劃、系統說明還是紀錄，選對應的骨架，**分析做完才開始排版**。分析不夠時，它會先問你或先補分析，不會先做出一個好看但沒內容的頁面。
 
+要的如果是給同事共編的文件、開會用的簡報、會自己更新的數字頁或設計畫面，它會改用 claude.ai 內建的 Docs、Slides、Dashboard、Design，不硬做成文物；文物專門留給「讓你看懂、讓你做決定」的頁面。
+
 ## 換成你自己的（客製點清單）
 
 | 要改什麼 | 改哪裡 |
@@ -50,6 +52,7 @@ Claude 會先判斷這次是診斷、企劃、系統說明還是紀錄，選對�
 |---|---|
 | `SKILL.md` | 規則本體：骨架、作答區、五個原則、自檢清單 |
 | `assets/tokens.css` | 配色與基礎元件樣式 |
+| `assets/tokens-dark.css` | 深色模式配色（選用，接在 tokens.css 後面） |
 | `assets/components.md` | 各元件的 HTML／SVG 骨架：數據帶、泳道流程圖、步驟卡、作答區等 |
 | `LICENSE` | 授權聲明 |
 | `craft-artifact.zip` | 上面這些檔案打包好的版本，給 claude.ai 上傳用 |

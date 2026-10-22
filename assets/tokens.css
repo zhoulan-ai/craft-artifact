@@ -15,6 +15,8 @@
   --gap:#C8102E;  --gap-soft:#FBE9EC;
   --ok:#2E7D5B;   --ok-soft:#E4F2EC;
   --brain:#7A5AF5;--brain-soft:#EEEAFD;
+  /* 淡底上的字色（加深一階，對比 ≥4.5，WCAG）：標籤、膠囊用這組 */
+  --now-ink:#8A5A12; --ok-ink:#256B4D; --brain-ink:#5E43D1;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -76,11 +78,11 @@ section{padding:44px 0;border-bottom:1px solid var(--line)}
 
 /* 語意標籤 */
 .tag{display:inline-block;font-size:.78rem;padding:1px 8px;border-radius:4px;font-weight:500;white-space:nowrap}
-.tag.now{background:var(--now-soft);color:var(--now)}
+.tag.now{background:var(--now-soft);color:var(--now-ink)}
 .tag.sys{background:var(--sys-soft);color:var(--sys)}
 .tag.gap{background:var(--gap-soft);color:var(--gap)}
-.tag.ok{background:var(--ok-soft);color:var(--ok)}
-.tag.brain{background:var(--brain-soft);color:var(--brain)}
+.tag.ok{background:var(--ok-soft);color:var(--ok-ink)}
+.tag.brain{background:var(--brain-soft);color:var(--brain-ink)}
 
 /* 表格 */
 table{border-collapse:collapse;width:100%;margin:0 0 1.2em;background:var(--panel)}

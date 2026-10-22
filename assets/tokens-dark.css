@@ -1,0 +1,22 @@
+/* ============================================================
+   產成文物｜深色模式代幣（選用）
+   新文物要支援深色時，接在 tokens.css 後面整段貼上。
+   前提：頁面裡的顏色全部走 token，不能有寫死的淺色（#fff、#FAFBFC 這類）；
+   語意色用途照舊；每組字色配自己的 soft 底實算對比 ≥4.5。
+   ============================================================ */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15171C; --ink:#E6E8EC; --muted:#A0A7B4; --line:#323743; --panel:#1E2128;
+  --now:#E0A64A; --now-soft:#3A2E17; --now-ink:#E0A64A;
+  --sys:#6FA3F0; --sys-soft:#16253D;
+  --gap:#F2788A; --gap-soft:#3D1A20;
+  --ok:#5CC394;  --ok-soft:#163327;  --ok-ink:#5CC394;
+  --brain:#A48BFA;--brain-soft:#2A2247;--brain-ink:#A48BFA;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#15171C; --ink:#E6E8EC; --muted:#A0A7B4; --line:#323743; --panel:#1E2128;
+  --now:#E0A64A; --now-soft:#3A2E17; --now-ink:#E0A64A;
+  --sys:#6FA3F0; --sys-soft:#16253D;
+  --gap:#F2788A; --gap-soft:#3D1A20;
+  --ok:#5CC394;  --ok-soft:#163327;  --ok-ink:#5CC394;
+  --brain:#A48BFA;--brain-soft:#2A2247;--brain-ink:#A48BFA;
+  color-scheme:dark}
